@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
 import com.example.work11.MainActivity
 
-abstract class BaseRecyclers : RecyclerView.Adapter<RecyclerView.ViewHolder>(),IViewInterface {
+abstract class BaseRecyclers : RecyclerView.Adapter<RecyclerView.ViewHolder>(), IViewInterface {
     companion object {
         const val ITEM__1 = 0
         const val ITEM__2 = 1
@@ -14,23 +14,13 @@ abstract class BaseRecyclers : RecyclerView.Adapter<RecyclerView.ViewHolder>(),I
         const val TAG = "this"
     }
 
-
-
     var mContext: Context? = null
-
     var needHeader: Boolean = true
     var myPosition = 0
-
     var iItemClickListener: IItemClickListener? = null
-
-
     var mDataList = arrayListOf(mutableMapOf<Int, String>())
     var mHeader: ArrayList<String> = arrayListOf()
     var mEnd: ArrayList<String> = arrayListOf()
-
-
-
-
 
     override fun getItemCount(): Int {
         return if (needHeader) {
@@ -86,12 +76,9 @@ abstract class BaseRecyclers : RecyclerView.Adapter<RecyclerView.ViewHolder>(),I
     fun setOnKotlinItemClickListener(iItemClickListener: IItemClickListener) {
         this.iItemClickListener = iItemClickListener
     }
-    fun changeToNoHead(){
-        if (needHeader){
-            needHeader = false
-        }else{
-            needHeader = true
-        }
+
+    fun changeToNoHead() {
+        needHeader = !needHeader
         notifyDataSetChanged()
     }
 }

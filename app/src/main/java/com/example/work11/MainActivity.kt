@@ -28,10 +28,7 @@ class MainActivity : AppCompatActivity() {
     var gridViewAdapter: GridViewAdapter = GridViewAdapter()
     var changeView: Boolean = false
 
-    private var mRecyclerHandlerImpl:RecyclerHandlerImpl?= null
-
-
-
+    private var mRecyclerHandlerImpl: RecyclerHandlerImpl? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         initView()
         initData()
-        mRecyclerHandlerImpl= RecyclerHandlerImpl(linearAdapter,gridViewAdapter)
+        mRecyclerHandlerImpl = RecyclerHandlerImpl(linearAdapter, gridViewAdapter)
         setDatas()
     }
 
@@ -54,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             mRecyclerHandlerImpl?.getHeader("改完的head")
         }
         if_hide_header.setOnClickListener {
-                        linearAdapter.changeToNoHead()
+            linearAdapter.changeToNoHead()
         }
         if_change_view.setOnClickListener {
             if (changeView) {
@@ -109,7 +106,8 @@ class MainActivity : AppCompatActivity() {
         }
         Log.i("ancg", mData.toString())
     }
-    private fun setDatas(){
+
+    private fun setDatas() {
         mRecyclerHandlerImpl?.getData(mData)
         mRecyclerHandlerImpl?.getEnd("我是表尾。。。")
         mRecyclerHandlerImpl?.getHeader("我是表头")

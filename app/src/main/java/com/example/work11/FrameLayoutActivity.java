@@ -1,0 +1,16 @@
+package com.example.work11;
+
+import android.os.Bundle;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+/**
+ * Created by anchaoguang on 2019-10-08.
+ */
+public class FrameLayoutActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.frame_layout);
+    }
+}
